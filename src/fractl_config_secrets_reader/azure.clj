@@ -21,10 +21,10 @@
                (.getValue setting)})
             settings-list))))
 
-(defn get-config [config]
+(defn- get-config [config]
   (get-config-list (-> config :secret-config :connection-string)))
 
-(defn fetch-fractl-config [config]
+(defn- fetch-fractl-config [config]
   (let [connection-string (-> config :secret-config :connection-string)
         client (-> (ConfigurationClientBuilder.)
                    (.connectionString connection-string)
