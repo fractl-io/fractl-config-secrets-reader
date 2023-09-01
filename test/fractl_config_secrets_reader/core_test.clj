@@ -10,7 +10,7 @@
 (def config-test-azure
   {:secret-config
    {:type :azure-app-config
-    :con-string "Endpoint=https://fractl-test.azconfig.io;Id=ByfR;Secret=7cmhKJ6Lp2mN4goC75wrj+mFVnZz1O8+ixZrpmONg7o="}})
+    :connection-string "Endpoint=https://fractl-test.azconfig.io;Id=ByfR;Secret=7cmhKJ6Lp2mN4goC75wrj+mFVnZz1O8+ixZrpmONg7o="}})
 
 (deftest a-test
   (testing "AWS Fetch"

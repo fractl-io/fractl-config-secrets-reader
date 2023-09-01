@@ -22,12 +22,12 @@
             settings-list))))
 
 (defn get-config [config]
-  (get-config-list (-> config :secret-config :con-string)))
+  (get-config-list (-> config :secret-config :connection-string)))
 
 (defn fetch-fractl-config [config]
-  (let [con-string (-> config :secret-config :con-string)
+  (let [connection-string (-> config :secret-config :connection-string)
         client (-> (ConfigurationClientBuilder.)
-                   (.connectionString con-string)
+                   (.connectionString connection-string)
                    (.buildClient))
         fractl-config (.getConfigurationSetting client "FRACTL_CONFIG" nil)]
     (merge (read-string (.getValue fractl-config)) config)))
